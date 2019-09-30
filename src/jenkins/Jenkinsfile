@@ -1,0 +1,22 @@
+stage('Test') {
+    sh './scripts/check.sh'
+}
+
+milestone(10)
+stage('Build Docker') {
+    sh './scripts/assemble.sh'
+}
+
+stage('Migrate dev') {
+    sh './scripts/migrate.sh dev'
+}
+
+deployeToDevEnv(
+)
+
+stage('Migrate production') {
+    sh './scripts/migrate.sh production'
+}
+
+deployeToProductionEnv(
+)
