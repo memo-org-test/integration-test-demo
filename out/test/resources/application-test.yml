@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${psql.host}:${psql.tcp.5432}/zenUp
+    username: postgres
+    password: zenUp
+  jpa:
+  flyway:
+    enabled: true
+
+cloud:
+  aws:
+    region:
+      static: cn-north-1
+    credentials:
+      instance-profile: false
+    stack:
+      auto: false
+
+mockserver:
+  url: http://${mockServer.host}:${mockServer.tcp.1080}
+
+userInfoService:
+  host: ${mockserver.url}

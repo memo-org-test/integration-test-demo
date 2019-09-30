@@ -14,6 +14,8 @@ test {
 
 // ====== integration tests config
 task integrationTest(type: Test) {
+    environment "AWS_ACCESS_KEY_ID", "fake"
+    environment "AWS_SECRET_ACCESS_KEY", "fake"
     useJUnitPlatform {
         includeTags 'integration-test'
     }
@@ -36,7 +38,7 @@ dockerCompose.isRequiredBy(integrationTest)
 dockerCompose {
     useComposeFiles = ['docker-compose.yaml']
     waitForTcpPorts = true
-    captureContainersOutput = true
+    captureContainersOutput = false
     removeVolumes = true
     projectName = UUID.randomUUID()
     dockerComposeWorkingDirectory = "${projectDir}/src/test/resources/"
