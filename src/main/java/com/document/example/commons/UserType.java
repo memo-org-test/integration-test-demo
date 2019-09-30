@@ -12,9 +12,9 @@ import java.util.List;
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public enum UserType {
-    STAFF(true,     ImmutableList.of(DocumentType.ID, DocumentType.CV)),
-    TENANT(true,    ImmutableList.of(DocumentType.ID, DocumentType.PROOF_OF_INCOME)),
-    OPERATOR(false,    Collections.emptyList());
+    STAFF(      true,   ImmutableList.of(DocumentType.ID, DocumentType.CV)),
+    TENANT(     true,   ImmutableList.of(DocumentType.ID, DocumentType.PROOF_OF_INCOME)),
+    OPERATOR(   false,  Collections.emptyList());
 
     private final boolean requiredToUploadDocuments;
 

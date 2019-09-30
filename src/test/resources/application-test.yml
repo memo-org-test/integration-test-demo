@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${psql.host}:${psql.tcp.5432}/zenUp
+    url: jdbc:postgresql://${psql.host}:${psql.tcp.5432}/fake
     username: postgres
-    password: zenUp
+    password: fake
   jpa:
   flyway:
     enabled: true

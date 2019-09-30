@@ -2,20 +2,18 @@ version: '3'
 services:
   mockServer:
     image: jamesdbloom/mockserver:mockserver-5.6.0
-    network_mode: bridge
     ports:
       - 1080
     environment:
       - LOG_LEVEL=DEBUG # INFO
 
   psql:
-    network_mode: bridge
     image: postgres
     ports:
       - 5432
     environment:
-      POSTGRES_PASSWORD: zenUp
-      POSTGRES_DB: zenUp
+      POSTGRES_PASSWORD: fake
+      POSTGRES_DB: fake
       TZ: GMT
 
   localstack:
@@ -29,8 +27,3 @@ services:
     ports:
       - 4576
       - 4572
-
-networks:
-  default:
-    external:
-      name: bridge
